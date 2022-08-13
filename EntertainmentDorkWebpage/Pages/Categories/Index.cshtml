@@ -1,0 +1,44 @@
+﻿@page
+@model EntertainmentDorkWebpage.Pages.Categories.IndexModel
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Category List</h2>
+        </div>
+        <div class="col-6">
+            <a asp-page="create" class="btn btn-primary">Create a Submission</a>
+        </div>
+    </div>
+
+    <br /> <br />
+
+    <table class="table table-bordered table-striped" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Discord</th>
+                <th>Instagram</th>
+                <th>Interests</th>
+                <th>Publications</th>
+                <th>Verified</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model.Submissions) {
+                <tr>
+                    <td width="12%">@obj.FirstName</td>
+                    <td width="12%">@obj.LastName</td>
+                    <td width="12%">@obj.Email</td>
+                    <td width="12%">@obj.DiscordName</td>
+                    <td width="12%">@obj.InstagramName</td>
+                    <td width="12%">@obj.Interests</td>
+                    <td width="12%">@obj.LinkToPastWork</td>
+                    <td width="12%">@obj.Verified</td>
+                </tr>   
+            }
+        </tbody>
+    </table>
+</div>
