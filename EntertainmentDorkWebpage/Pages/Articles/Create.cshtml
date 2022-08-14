@@ -1,0 +1,54 @@
+﻿@page
+@model EntertainmentDorkWebpage.Pages.Articles.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MainArticles</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MainArticles.Title" class="control-label"></label>
+                <input asp-for="MainArticles.Title" class="form-control" />
+                <span asp-validation-for="MainArticles.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainArticles.Date" class="control-label"></label>
+                <input asp-for="MainArticles.Date" class="form-control" />
+                <span asp-validation-for="MainArticles.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainArticles.Author" class="control-label"></label>
+                <input asp-for="MainArticles.Author" class="form-control" />
+                <span asp-validation-for="MainArticles.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainArticles.ArticleBody" class="control-label"></label>
+                <input asp-for="MainArticles.ArticleBody" class="form-control" />
+                <span asp-validation-for="MainArticles.ArticleBody" class="text-danger"></span>
+            </div>
+            <!--<div class="form-group form-check">
+                <label class="form-check-label">
+                    <input disabled class="form-check-input" asp-for="MainArticles.Published" /> @Html.DisplayNameFor(model => model.MainArticles.Published)
+                </label>
+            </div>-->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

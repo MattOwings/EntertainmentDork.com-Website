@@ -1,6 +1,10 @@
 ﻿@page
 @model EntertainmentDorkWebpage.Pages.Categories.IndexModel
 
+@if(TempData["success"]!=null) {
+    <h2>@TempData["success"]</h2>
+}
+
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
@@ -24,6 +28,7 @@
                 <th>Interests</th>
                 <th>Publications</th>
                 <th>Verified</th>
+                <th>Functionality</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +42,12 @@
                     <td width="12%">@obj.Interests</td>
                     <td width="12%">@obj.LinkToPastWork</td>
                     <td width="12%">@obj.Verified</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary m-0">Edit</a>
+                            <a asp-page="Delete" asp-route-id="@obj.Id" class="btn btn-danger m-0">Delete</a>
+                        </div>
+                    </td>
                 </tr>   
             }
         </tbody>

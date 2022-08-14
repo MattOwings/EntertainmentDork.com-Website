@@ -11,5 +11,6 @@ namespace EntertainmentDorkWebpage.Data
         }
 
         public DbSet<SubmissionForm> SubmissionForm { get; set; }
+        public DbSet<MainArticles> Articles { get; set; }
     }
 }

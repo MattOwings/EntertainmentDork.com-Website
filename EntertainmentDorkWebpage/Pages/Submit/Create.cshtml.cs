@@ -29,7 +29,8 @@ namespace EntertainmentDorkWebpage.Pages.Categories
             {
                 await _db.SubmissionForm.AddAsync(Submission);
                 await _db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                TempData["success"] = "Submission created successfully!";
+                return RedirectToPage("Index");
             }
             return Page();
         }

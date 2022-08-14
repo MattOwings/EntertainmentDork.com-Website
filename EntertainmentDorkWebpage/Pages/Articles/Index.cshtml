@@ -1,0 +1,105 @@
+﻿@page
+@model EntertainmentDorkWebpage.Pages.Articles.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MainArticles[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainArticles[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainArticles[0].Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainArticles[0].ArticleBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainArticles[0].Published)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MainArticles) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArticleBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Published)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<style>
+    .flex {
+        display: flex;
+        
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        color: black;
+        text-align: center;
+    }
+    .flex-item {
+        width: 30%;
+        height: 15rem;
+        border: 2px solid black;
+
+        
+    }
+    .flex-item .Title {
+        font-size: 2.5rem;
+    }
+    .flex-item .Date {
+        font-size: 1.5rem;
+    }
+    .flex-item .Author {
+        font-size: 1.5rem;
+    }
+    .flex-item .ArticleBody {
+        font-size: 1rem;
+    }
+</style>
+
+<div class="flex">
+    @foreach (var item in Model.MainArticles) {
+        <div class="flex-item">
+            <h1 class="Title">@Html.DisplayFor(modelItem => item.Title)</h1>
+            <h1 class="Date">@Html.DisplayFor(modelItem => item.Date)</h1>
+            <h1 class="Author">By: @Html.DisplayFor(modelItem => item.Author)</h1>
+            <h1 class="ArticleBody">@Html.DisplayFor(modelItem => item.ArticleBody)</h1>
+        </div>
+    }
+</div>

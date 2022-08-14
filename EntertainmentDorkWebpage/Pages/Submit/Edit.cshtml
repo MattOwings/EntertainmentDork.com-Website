@@ -1,0 +1,56 @@
+﻿@page
+@model EntertainmentDorkWebpage.Pages.Categories.EditModel
+
+<form method="post">
+    <input hidden asp-for="Submission.Id" />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Submission</h2>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.FirstName">First Name: </label>
+            <input asp-for="@Model.Submission.FirstName" class="form-control" />
+            <span asp-validation-for="@Model.Submission.FirstName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.LastName">Last Name: </label>
+            <input asp-for="@Model.Submission.LastName" class="form-control" />
+            <span asp-validation-for="@Model.Submission.LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.Email">Email: </label>
+            <input asp-for="@Model.Submission.Email" class="form-control" />
+            <span asp-validation-for="@Model.Submission.Email" class="text-danger"></span>
+        </div>
+        <!--<div asp-validation-summary="All"></div>--> <!-- Custom error messages -->
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.DiscordName">Discord Username: </label>
+            <input asp-for="@Model.Submission.DiscordName" class="form-control" />
+            <span asp-validation-for="@Model.Submission.DiscordName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.InstagramName">Instagram Username: </label>
+            <input asp-for="@Model.Submission.InstagramName" class="form-control" />
+            <span asp-validation-for="@Model.Submission.InstagramName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.Interests">Interests: </label>
+            <input asp-for="@Model.Submission.Interests" class="form-control" />
+            <span asp-validation-for="@Model.Submission.Interests" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Submission.LinkToPastWork">Links to your work: </label>
+            <input asp-for="@Model.Submission.LinkToPastWork" class="form-control" />
+            <span asp-validation-for="@Model.Submission.LinkToPastWork" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 150px;">Update</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}

@@ -4,7 +4,19 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Entertainment Dork</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    #index-page h1, #index-page h2, #index-page h3 {
+        text-align: center;
+    }
+</style>
+
+<div id="index-page" class="text-center">
+
+    <div>
+
+    </div>
+
+    <h1 class="display-4 text-decoration-underline fst-italic">Entertainment Dork</h1>
+    <h2 class="fw-normal">News, Blogging, & Publication Website</h2>
+    <h3 class="fw-normal">Navigate to <a asp-page="/Submit/Index">Submit an Application</a> to get started!</h3>
 </div>
